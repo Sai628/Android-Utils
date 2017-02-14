@@ -16,7 +16,7 @@ public class Utils
 
     private Utils()
     {
-        throw new UnsupportedOperationException("You can't instantiate Utils.");
+        throw new UnsupportedOperationException("You can't instantiate this class.");
     }
 
 
