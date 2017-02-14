@@ -5,8 +5,8 @@ import android.content.Context;
 
 /**
  * @author Sai
- * @ClassName:
- * @Description:
+ * @ClassName: Utils
+ * @Description: 工具初始化类
  * @date 13/02/2017 18:52
  */
 public class Utils
@@ -21,7 +21,7 @@ public class Utils
 
 
     /**
-     * 初始化工具类
+     * 初始化工具类. 请在自定义的 Application 类的入口处调用该初始化方法
      *
      * @param context
      */
