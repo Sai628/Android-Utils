@@ -226,6 +226,7 @@ public class StringUtils
         {
             return s;
         }
+
         char[] chars = s.toCharArray();
         for (int i = 0, len = chars.length; i < len; i++)
         {
@@ -238,6 +239,7 @@ public class StringUtils
                 chars[i] = (char) (chars[i] + 65248);
             }
         }
+
         return new String(chars);
     }
 }
