@@ -99,18 +99,6 @@ public class StringUtils
 
 
     /**
-     * null 转为长度为 0 的字符串
-     *
-     * @param s 待转换的字符串
-     * @return {@code String} s 为 null 时, 转为长度为 0 的字符串; 否则不改变
-     */
-    public static String null2Length0(String s)
-    {
-        return (s == null ? "" : s);
-    }
-
-
-    /**
      * 返回字符串的长度
      *
      * @param s 待计算的字符串
@@ -119,6 +107,18 @@ public class StringUtils
     public static int length(CharSequence s)
     {
         return (s == null ? 0 : s.length());
+    }
+
+
+    /**
+     * null 转为长度为 0 的字符串
+     *
+     * @param s 待转换的字符串
+     * @return {@code String} s 为 null 时, 转为长度为 0 的字符串; 否则不改变
+     */
+    public static String null2Length0(String s)
+    {
+        return (s == null ? "" : s);
     }
 
 

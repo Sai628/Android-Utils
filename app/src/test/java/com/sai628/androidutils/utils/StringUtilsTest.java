@@ -68,19 +68,19 @@ public class StringUtilsTest
 
 
     @Test
-    public void testNull2Lenght0() throws Exception
-    {
-        assertThat(null2Length0(null)).isEqualTo("");
-        assertThat(null2Length0("abc")).isEqualTo("abc");
-    }
-
-
-    @Test
     public void testLength() throws Exception
     {
         assertThat(length(null)).isEqualTo(0);
         assertThat(length("")).isEqualTo(0);
         assertThat(length("abc")).isEqualTo(3);
+    }
+
+
+    @Test
+    public void testNull2Lenght0() throws Exception
+    {
+        assertThat(null2Length0(null)).isEqualTo("");
+        assertThat(null2Length0("abc")).isEqualTo("abc");
     }
 
 
