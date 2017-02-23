@@ -26,6 +26,24 @@ outToCenterAnimation    从中部退出动画
 shakeAnimation          抖动动画
 ```
 
+### Clipboard Utils
+```java
+copyText                复制文本到剪贴板
+getText                 获取剪贴板的文本
+
+copyUri                 复制 Uri 到剪贴板
+getUri                  获取剪贴板的 Uri
+
+copyIntent              复制 Intent 到剪贴板
+getIntent               获取剪贴板的 Intent
+```
+
+### Close Utils
+```java
+closeIO                 关闭 IO
+closeIOQuietly          安静的关闭 IO
+```
+
 ### Intent Utils
 ```java
 getComponentIntent      获取其它应用组件的意图
