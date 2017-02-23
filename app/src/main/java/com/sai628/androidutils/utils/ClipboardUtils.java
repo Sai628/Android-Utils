@@ -46,7 +46,7 @@ public class ClipboardUtils
 
 
     /**
-     * 复制 uri 到剪贴板
+     * 复制 Uri 到剪贴板
      *
      * @param uri 待复制的 uri
      */
@@ -58,7 +58,7 @@ public class ClipboardUtils
 
 
     /**
-     * 获取剪贴板的 uri
+     * 获取剪贴板的 Uri
      *
      * @return {@code Uri} 剪贴板上的 uri
      */
