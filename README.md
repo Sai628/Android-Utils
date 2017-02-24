@@ -1,4 +1,4 @@
-## Some Useful Utils code for Android Develop
+## Some Useful Utils Code for Android Develop
 
 ### Activity Utils
 ```java
