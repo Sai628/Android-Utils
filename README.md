@@ -44,6 +44,12 @@ closeIO                 关闭 IO
 closeIOQuietly          安静的关闭 IO
 ```
 
+### Empty Utils
+```java
+isEmpty                 判断对象是否为空
+isNotEmpty              判断对象是否非空
+```
+
 ### Intent Utils
 ```java
 getComponentIntent      获取其它应用组件的意图
