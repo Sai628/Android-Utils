@@ -106,7 +106,7 @@ public class ActivityUtils
     {
         try
         {
-            Class activityThreadClass = Class.forName("android.app.ActivityThread");
+            Class<?> activityThreadClass = Class.forName("android.app.ActivityThread");
             Object activityThread = activityThreadClass.getMethod("currentActivityThread").invoke(null);
             Field activitiesField = activityThreadClass.getDeclaredField("mActivities");
             activitiesField.setAccessible(true);
