@@ -50,6 +50,19 @@ isEmpty                 判断对象是否为空
 isNotEmpty              判断对象是否非空
 ```
 
+### Encode Utils
+```java
+urlEncode               URL 编码
+urlDecode               URL 解码
+
+base64Encode            Base64 编码
+base64Encode2String     Base64 编码为字符串
+base64Decode            Base64 解码
+base64UrlSafeEncode     Base64 URL 安全编码
+
+htmlEncode              Html 编码
+```
+
 ### Intent Utils
 ```java
 getComponentIntent      获取其它应用组件的意图
