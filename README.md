@@ -64,9 +64,36 @@ htmlEncode              Html 编码
 htmlDecode              Html 解码
 ```
 
+### File Utils
+```java
+getFileByPath           根据文件路径获取文件
+
+isFileExists            判断文件是否存在
+```
+
 ### Intent Utils
 ```java
-getComponentIntent      获取其它应用组件的意图
+getUninstallAppIntent       获取卸载App的Intent
+getLaunchAppIntent          获取打开App的Intent
+getAppDetailsSettingsIntent 获取App具体设置的Intent
+
+getShareTextIntent          获取分享文本的Intent
+getShareImageIntent         获取分享图片的Intent
+
+getComponentIntent          获取其它应用组件的Intent
+getShutdownIntent           获取关机的Intent
+getHomeCategoryIntent       获取返回系统主界面的Intent
+getOpenURLIntent            获取打开URL的Intent
+
+getDialIntent               获取跳转至拨号界面的Intent
+getCallIntent               获取拨打电话的Intent
+getSendSmsIntent            获取跳转至发送短信界面的Intent
+getSendEmailIntent          获取跳转至发送邮件界面的Intent
+
+getCaptureIntent            获取拍照的Intent
+getPickImageIntent          获取选择系统图库中图片的Intent
+getPickVideoIntent          获取选择系统媒体库中视频的Intent
+getCropImageIntent          获取裁剪图片的Intent
 ```
 
 ### String Utils
