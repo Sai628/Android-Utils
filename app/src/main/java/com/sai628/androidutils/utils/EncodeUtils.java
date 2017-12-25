@@ -230,4 +230,16 @@ public class EncodeUtils
 
         return out.toString();
     }
+
+
+    /**
+     * Html解码
+     *
+     * @param input 待解码的字符串
+     * @return Html解码后的字符串
+     */
+    public static CharSequence htmlDecode(String input)
+    {
+        return Html.fromHtml(input);
+    }
 }

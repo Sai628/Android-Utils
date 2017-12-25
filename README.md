@@ -61,6 +61,7 @@ base64Decode            Base64 解码
 base64UrlSafeEncode     Base64 URL 安全编码
 
 htmlEncode              Html 编码
+htmlDecode              Html 解码
 ```
 
 ### Intent Utils

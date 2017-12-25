@@ -9,6 +9,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static com.sai628.androidutils.utils.EncodeUtils.base64Decode;
 import static com.sai628.androidutils.utils.EncodeUtils.base64Encode;
 import static com.sai628.androidutils.utils.EncodeUtils.base64Encode2String;
+import static com.sai628.androidutils.utils.EncodeUtils.htmlDecode;
 import static com.sai628.androidutils.utils.EncodeUtils.htmlEncode;
 import static com.sai628.androidutils.utils.EncodeUtils.urlDecode;
 import static com.sai628.androidutils.utils.EncodeUtils.urlEncode;
@@ -75,5 +76,12 @@ public class EncodeUtilsTest
     public void testHtmlEncode() throws Exception
     {
         assertThat(htmlEncode(html)).isEqualTo(encodeHtml);
+    }
+
+
+    @Test
+    public void testHtmlDecode() throws Exception
+    {
+        assertThat(htmlDecode(encodeHtml).toString()).isEqualTo(html);
     }
 }
