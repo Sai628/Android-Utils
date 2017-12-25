@@ -2,11 +2,11 @@
 
 ### Activity Utils
 ```java
-isActivityExists        判断是否存在某 Activity
-launchActivity          打开 Activity
+isActivityExists        判断是否存在某Activity
+launchActivity          打开Activity
 
-getLauncherActivity     获取某包下的 Launcher Activity
-getTopActivity          获取栈顶 Activity
+getLauncherActivity     获取某包下的Launcher Activity
+getTopActivity          获取栈顶Activity
 ```
 
 ### Animation Utils
@@ -31,17 +31,17 @@ shakeAnimation          抖动动画
 copyText                复制文本到剪贴板
 getText                 获取剪贴板的文本
 
-copyUri                 复制 Uri 到剪贴板
-getUri                  获取剪贴板的 Uri
+copyUri                 复制Uri到剪贴板
+getUri                  获取剪贴板的Uri
 
-copyIntent              复制 Intent 到剪贴板
-getIntent               获取剪贴板的 Intent
+copyIntent              复制Intent到剪贴板
+getIntent               获取剪贴板的Intent
 ```
 
 ### Close Utils
 ```java
-closeIO                 关闭 IO
-closeIOQuietly          安静的关闭 IO
+closeIO                 关闭IO
+closeIOQuietly          安静的关闭IO
 ```
 
 ### Empty Utils
@@ -52,16 +52,16 @@ isNotEmpty              判断对象是否非空
 
 ### Encode Utils
 ```java
-urlEncode               URL 编码
-urlDecode               URL 解码
+urlEncode               URL编码
+urlDecode               URL解码
 
-base64Encode            Base64 编码
-base64Encode2String     Base64 编码为字符串
-base64Decode            Base64 解码
-base64UrlSafeEncode     Base64 URL 安全编码
+base64Encode            Base64编码
+base64Encode2String     Base64编码为字符串
+base64Decode            Base64解码
+base64UrlSafeEncode     Base64 URL安全编码
 
-htmlEncode              Html 编码
-htmlDecode              Html 解码
+htmlEncode              Html编码
+htmlDecode              Html解码
 ```
 
 ### File Utils
@@ -98,14 +98,14 @@ getCropImageIntent          获取裁剪图片的Intent
 
 ### String Utils
 ```java
-isEmpty                 判断字符串是否为 null 或长度为 0
-isSpace                 判断字符串是否为 null 或全为空格
+isEmpty                 判断字符串是否为null或长度为0
+isSpace                 判断字符串是否为null或全都为空格
 
 equals                  判断两字符串是否相等
 equalsIgnoreCase        判断两字符串忽略大小写是否相等
 length                  返回字符串的长度
 
-null2Length0            null 转为长度为 0 的字符串
+null2Length0            null转为长度为0的字符串
 upperFirstLetter        字符串首字母转大写
 lowerFirstLetter        字符串首字母转小写
 reverse                 反转字符串
