@@ -1602,10 +1602,7 @@ public class FileUtils
             dis = new DigestInputStream(fis, md);
 
             byte[] buffer = new byte[1024 * 256];
-            while (dis.read(buffer) != -1)
-            {
-                ;
-            }
+            while (dis.read(buffer) != -1){}
 
             md = dis.getMessageDigest();
             return md.digest();
