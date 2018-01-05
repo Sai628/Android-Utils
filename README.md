@@ -66,9 +66,49 @@ htmlDecode              Html解码
 
 ### File Utils
 ```java
-getFileByPath           根据文件路径获取文件
+getFileByPath   根据文件路径获取文件
+isFileExists    判断文件是否存在
+rename          重命令文件
 
-isFileExists            判断文件是否存在
+isDir           判断是否为目录
+isFile          判断是否为文件
+
+createOrExistsDir           判断目录是否存在, 不存在则判断是否创建目录成功
+createOrExistsFile          判断文件是否存在, 不存在则判断是否创建文件成功
+createFileByDeleteOldFile   判断文件是否存在, 存在则创建之前删除旧文件, 然后返回创建的结果
+
+copyOrMoveDir       复制或移动目录
+copyOrMoveFile      复制或移动文件
+copyDir             复制目录
+copyFile            复制文件
+moveDir             移动目录
+moveFile            移动文件
+deleteDir           删除目录
+deleteFile          删除文件
+deleteFilesInDir    删除目录下的所有文件
+
+listFilesInDir              获取目录下所有文件
+listFilesInDirWithFilter    获取目录下所有符合过滤器的文件
+
+writeFileFromIS     将输入流写入文件
+writeFileFromString 将字符串写入文件
+readFile2List       指定编码按行读取文件到链表中
+readFile2String     指定编码按行读取文件到字符串中
+readFile2Bytes      读取文件到字符数组中
+
+getFileLastModified         获取文件最后修改的毫秒时间戳
+getFileCharsetSimple        简单获取文件编码格式
+getFileLines                获取文件行数
+getDirSize                  获取目录大小
+getFileSize                 获取文件大小
+getDirLength                获取目录长度. 当目录不存在时, 返回-1
+getFileLength               获取文件长度. 当文件不存在时, 返回-1
+getFileMD5ToString          获取文件的MD5校验码
+getFileMD5                  获取文件的MD5校验码
+getDirName                  获取全路径中的最长目录
+getFileName                 获取全路径中的文件名
+getFileNameWithoutExtension 获取全路径中的不带拓展名的文件名
+getFileExtension            获取全路径中的文件拓展名
 ```
 
 ### Intent Utils
@@ -103,6 +143,7 @@ isSpace                 判断字符串是否为null或全都为空格
 
 equals                  判断两字符串是否相等
 equalsIgnoreCase        判断两字符串忽略大小写是否相等
+
 length                  返回字符串的长度
 
 null2Length0            null转为长度为0的字符串
