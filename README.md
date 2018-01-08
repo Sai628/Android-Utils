@@ -49,10 +49,10 @@ closeIOQuietly(Closeable... closeables)|安静的关闭IO
 ### Const Utils
 常量名|描述
 ---|---
-与存储相关|
-KB|KB与Byte的倍数
-MB|MB与Byte的倍数
-GB|GB与Byte的倍数
+与存储相关|
+KB|KB与Byte的倍数
+MB|MB与Byte的倍数
+GB|GB与Byte的倍数
 与时间相关|
 SEC|秒与毫秒的倍数
 MIN|分与毫秒的倍数
