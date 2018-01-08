@@ -14,7 +14,7 @@ import java.util.Map;
 /**
  * @author Sai
  * @ClassName: EmptyUtils
- * @Description:
+ * @Description: 为空判断工具类
  * @date 24/02/2017 14:54
  */
 public class EmptyUtils
