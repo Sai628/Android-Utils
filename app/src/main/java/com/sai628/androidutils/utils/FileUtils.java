@@ -789,7 +789,7 @@ public class FileUtils
 
     /**
      * 获取目录下所有后缀名为 suffix 的文件
-     * <p>大小写忽略</p>
+     * <p>忽略大小写</p>
      *
      * @param dirPath     目录路径
      * @param suffix      后缀名
@@ -804,7 +804,7 @@ public class FileUtils
 
     /**
      * 获取目录下所有后缀名为 suffix 的文件
-     * <p>大小写忽略</p>
+     * <p>忽略大小写</p>
      *
      * @param dir         目录
      * @param suffix      后缀名
@@ -842,7 +842,7 @@ public class FileUtils
 
     /**
      * 获取目录下所有后缀名为 suffix 的文件(包括子目录)
-     * <p>大小写忽略</p>
+     * <p>忽略大小写</p>
      *
      * @param dirPath 目录路径
      * @param suffix  后缀名
@@ -856,7 +856,7 @@ public class FileUtils
 
     /**
      * 获取目录下所有后缀名为 suffix 的文件(包括子目录)
-     * <p>大小写忽略</p>
+     * <p>忽略大小写</p>
      *
      * @param dir    目录
      * @param suffix 后缀名

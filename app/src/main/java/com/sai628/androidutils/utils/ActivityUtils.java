@@ -100,6 +100,7 @@ public class ActivityUtils
 
     /**
      * 获取栈顶 Activity
+     *
      * @return {@code Activity}
      */
     public static Activity getTopActivity()

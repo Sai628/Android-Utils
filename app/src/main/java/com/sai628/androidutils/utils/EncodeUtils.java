@@ -24,7 +24,7 @@ public class EncodeUtils
 
 
     /**
-     * URL编码
+     * URL编码(使用UTF-8编码)
      * <p>若想自己指定字符集,可以使用{@link #urlEncode(String input, String charset)}方法</p>
      *
      * @param input 要编码的字符
@@ -59,7 +59,7 @@ public class EncodeUtils
 
 
     /**
-     * URL解码
+     * URL解码(使用UTF-8编码)
      * <p>若想自己指定字符集,可以使用 {@link #urlDecode(String input, String charset)}方法</p>
      *
      * @param input 要解码的字符串
@@ -118,7 +118,7 @@ public class EncodeUtils
 
 
     /**
-     * Base64编码
+     * Base64编码为字符串
      *
      * @param input 要编码的字节数组
      * @return Base64编码后的字符串
