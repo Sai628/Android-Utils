@@ -46,6 +46,30 @@ getIntent()|获取剪贴板的 Intent
 closeIO(Closeable... closeables)|关闭IO
 closeIOQuietly(Closeable... closeables)|安静的关闭IO
 
+### Const Utils
+常量名|描述
+---|---
+与存储相关|
+KB|KB与Byte的倍数
+MB|MB与Byte的倍数
+GB|GB与Byte的倍数
+与时间相关|
+SEC|秒与毫秒的倍数
+MIN|分与毫秒的倍数
+HOUR|时与毫秒的倍数
+DAY|天与毫秒的倍数
+与正则相关|
+REGEX_MOBILE|正则: 手机号(简单)
+REGEX_TEL|正则: 电话号码
+REGEX_ID_CARD15|正则: 身份证号码15位
+REGEX_ID_CARD18|正则: 身份证号码18位
+REGEX_EMAIL|正则: 邮箱
+REGEX_URL|正则: URL
+REGEX_ZH|正则: 汉字
+REGEX_USERNAME|正则: 用户名(取值范围为a-z,A-Z,0-9,"\_",汉字，不能以"\_"结尾,用户名必须是6-20位)
+REGEX_DATE|正则: yyyy-MM-dd格式的日期校验(已考虑平闰年)
+REGEX_IP|正则: IP地址
+
 ### Empty Utils
 方法签名|描述
 ---|---
