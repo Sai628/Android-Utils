@@ -234,6 +234,7 @@ px2dp(float pxValue)|px 转 dp
 sp2px(float spValue)|sp 转 px
 px2sp(float pxValue)|px 转 sp
 -|
+forceGetViewSize(final View view, final onGetSizeListener listener)|在onCreate中获取视图的尺寸
 measureView(View view)|测量视图尺寸
 getMeasureWidth(View view)|获取测量视图宽度
 getMeasureHeight(View view)|获取测量视图高度
