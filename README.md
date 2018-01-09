@@ -70,6 +70,19 @@ REGEX_USERNAME|正则: 用户名(取值范围为a-z,A-Z,0-9,"\_",汉字，不能
 REGEX_DATE|正则: yyyy-MM-dd格式的日期校验(已考虑平闰年)
 REGEX_IP|正则: IP地址
 
+### Convert Utils
+方法签名|描述
+---|---
+bytes2HexString(byte[] bytes)|byte数组转换为hex字符串
+hexString2Bytes(String hexString)|hex字符串转换为byte数组
+hex2Dec(char hexChar)|hex字符转换为int
+chars2Bytes(char[] chars)|char数组转换为byte数组
+bytes2Chars(byte[] bytes)|byte数组转换为char数组
+-|
+memorySize2Byte(long memorySize, ConstUtils.MemoryUnit unit)|以unit为单位的内存大小, 转换为字节数
+byte2MemorySize(long byteSize, ConstUtils.MemoryUnit unit)|字节数转换为以unit为单位的内存大小
+byte2FitMemorySize(long byteSize)|字节数转换为合适显示的内存大小字符串
+
 ### Empty Utils
 方法签名|描述
 ---|---
