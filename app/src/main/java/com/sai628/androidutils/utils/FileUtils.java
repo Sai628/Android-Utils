@@ -1287,8 +1287,20 @@ public class FileUtils
      */
     public static byte[] readFile2Bytes(File file)
     {
-        //TODO
-        throw new UnsupportedOperationException("not implement yet");
+        if (file == null)
+        {
+            return null;
+        }
+
+        try
+        {
+            return ConvertUtils.inputStream2Bytes(new FileInputStream(file));
+        }
+        catch (FileNotFoundException e)
+        {
+            e.printStackTrace();
+            return null;
+        }
     }
 
 
@@ -1439,8 +1451,8 @@ public class FileUtils
      */
     public static String getDirSize(File dir)
     {
-        //TODO
-        throw new UnsupportedOperationException("not implement yet");
+        long len = getDirLength(dir);
+        return (len == -1 ? "" : ConvertUtils.byte2FitMemorySize(len));
     }
 
 
@@ -1464,8 +1476,8 @@ public class FileUtils
      */
     public static String getFileSize(File file)
     {
-        //TODO
-        throw new UnsupportedOperationException("not implement yet");
+        long len = getFileLength(file);
+        return (len == -1 ? "" : ConvertUtils.byte2FitMemorySize(len));
     }
 
 
@@ -1564,8 +1576,7 @@ public class FileUtils
      */
     public static String getFileMD5ToString(File file)
     {
-        //TODO
-        throw new UnsupportedOperationException("not implement yet");
+        return ConvertUtils.bytes2HexString(getFileMD5(file));
     }
 
 
@@ -1602,7 +1613,9 @@ public class FileUtils
             dis = new DigestInputStream(fis, md);
 
             byte[] buffer = new byte[1024 * 256];
-            while (dis.read(buffer) != -1){}
+            while (dis.read(buffer) != -1)
+            {
+            }
 
             md = dis.getMessageDigest();
             return md.digest();
