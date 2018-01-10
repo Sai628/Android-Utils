@@ -78,10 +78,28 @@ hexString2Bytes(String hexString)|hex字符串转换为byte数组
 hex2Dec(char hexChar)|hex字符转换为int
 chars2Bytes(char[] chars)|char数组转换为byte数组
 bytes2Chars(byte[] bytes)|byte数组转换为char数组
+bytes2Bits(byte[] bytes)|byte数组转换为bit字符串
+bits2Bytes(String bits)|bit字符串转换为byte数组
 -|
 memorySize2Byte(long memorySize, ConstUtils.MemoryUnit unit)|以unit为单位的内存大小, 转换为字节数
 byte2MemorySize(long byteSize, ConstUtils.MemoryUnit unit)|字节数转换为以unit为单位的内存大小
 byte2FitMemorySize(long byteSize)|字节数转换为合适显示的内存大小字符串
+-|
+timeSpan2Millis(long timeSpan, ConstUtils.TimeUnit unit)|以unit为单位的时间长度, 转换为毫秒时间
+millis2TimeSpan(long millis, ConstUtils.TimeUnit unit)|将毫秒时间转换为以unit为单位的时间长度
+-|
+input2OutputStream(InputStream is)|inputStream转换为outputStream
+output2InputStream(OutputStream os)|outputStream转换为inputStream
+-|
+inputStream2Bytes(InputStream is)|inputStream转换为byte数组
+bytes2InputStream(byte[] bytes)|byte数组转换为inputStream
+outputStream2Bytes(OutputStream os)|outputStream转换为byte数组
+bytes2OutputStream(byte[] bytes)|byte数组转换为outputStream
+-|
+inputStream2String(InputStream is, String charsetName)|inputStream按编码格式转换为string
+string2InputStream(String string, String charsetName)|string按编码格式转换为inputStream
+outputStream2String(OutputStream os, String charsetName)|outputStream按编码格式转换为string
+string2OutputStream(String string, String charsetName)|string按编码格式转换为outputStream
 
 ### Empty Utils
 方法签名|描述

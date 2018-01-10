@@ -2,6 +2,13 @@ package com.sai628.androidutils.utils;
 
 import android.annotation.SuppressLint;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.io.UnsupportedEncodingException;
+
 
 /**
  * @author Sai
@@ -156,6 +163,66 @@ public class ConvertUtils
 
 
     /**
+     * byte数组转换为bit字符串
+     * <p>例如:</p>
+     * bytes2Bits(new byte[]{0x7F, (byte)0xFA}) returns "0111111111111010"
+     *
+     * @param bytes 字节数组
+     * @return bit字符串
+     */
+    public static String bytes2Bits(byte[] bytes)
+    {
+        StringBuilder sb = new StringBuilder();
+        for (byte aByte : bytes)
+        {
+            for (int i = 7; i >= 0; i--)
+            {
+                sb.append(((aByte >> i) & 0x01) == 0 ? '0' : '1');
+            }
+        }
+
+        return sb.toString();
+    }
+
+
+    /**
+     * bit字符串转换为byte数组
+     * <p>例如:</p>
+     * bits2Bytes("111111111111010") returns 7FFA
+     *
+     * @param bits 二进制字符串
+     * @return 字节数组
+     */
+    public static byte[] bits2Bytes(String bits)
+    {
+        int lenMod = bits.length() % 8;
+        int byteLen = bits.length() / 8;
+
+        // 不是8的倍数时, 前面补0
+        if (lenMod != 0)
+        {
+            for (int i = lenMod; i < 8; i++)
+            {
+                bits = "0" + bits;
+            }
+            byteLen += 1;
+        }
+
+        byte[] bytes = new byte[byteLen];
+        for (int i = 0; i < byteLen; i++)
+        {
+            for (int j = 0; j < 8; j++)
+            {
+                bytes[i] <<= 1;
+                bytes[i] |= bits.charAt(i * 8 + j) - '0';
+            }
+        }
+
+        return bytes;
+    }
+
+
+    /**
      * 以unit为单位的内存大小, 转换为字节数
      * <p>若memorySize小于0, 将返回-1</p>
      *
@@ -256,6 +323,313 @@ public class ConvertUtils
         else
         {
             return String.format("%.3fGB", byteSize / ConstUtils.GB + 0.0005);
+        }
+    }
+
+
+    /**
+     * 以unit为单位的时间长度, 转换为毫秒时间
+     *
+     * @param timeSpan 时间长度
+     * @param unit     单位类型
+     *                 <ul>
+     *                 <li>{@link ConstUtils.TimeUnit#MSEC}: 毫秒</li>
+     *                 <li>{@link ConstUtils.TimeUnit#SEC }: 秒</li>
+     *                 <li>{@link ConstUtils.TimeUnit#MIN }: 分</li>
+     *                 <li>{@link ConstUtils.TimeUnit#HOUR}: 时</li>
+     *                 <li>{@link ConstUtils.TimeUnit#DAY }: 天</li>
+     *                 </ul>
+     * @return 毫秒时间
+     */
+    public static long timeSpan2Millis(long timeSpan, ConstUtils.TimeUnit unit)
+    {
+        switch (unit)
+        {
+            default:
+            case MSEC:
+                return timeSpan;
+            case SEC:
+                return timeSpan * ConstUtils.SEC;
+            case MIN:
+                return timeSpan * ConstUtils.MIN;
+            case HOUR:
+                return timeSpan * ConstUtils.HOUR;
+            case DAY:
+                return timeSpan * ConstUtils.DAY;
+        }
+    }
+
+
+    /**
+     * 将毫秒时间转换为以unit为单位的时间长度
+     *
+     * @param millis 毫秒时间
+     * @param unit   单位类型
+     *               <ul>
+     *               <li>{@link ConstUtils.TimeUnit#MSEC}: 毫秒</li>
+     *               <li>{@link ConstUtils.TimeUnit#SEC }: 秒</li>
+     *               <li>{@link ConstUtils.TimeUnit#MIN }: 分</li>
+     *               <li>{@link ConstUtils.TimeUnit#HOUR}: 时</li>
+     *               <li>{@link ConstUtils.TimeUnit#DAY }: 天</li>
+     *               </ul>
+     * @return 以unit为单位的时间长度
+     */
+    public static double millis2TimeSpan(long millis, ConstUtils.TimeUnit unit)
+    {
+        switch (unit)
+        {
+            default:
+            case MSEC:
+                return (double) millis;
+            case SEC:
+                return (double) millis / ConstUtils.SEC;
+            case MIN:
+                return (double) millis / ConstUtils.MIN;
+            case HOUR:
+                return (double) millis * ConstUtils.HOUR;
+            case DAY:
+                return (double) millis * ConstUtils.DAY;
+        }
+    }
+
+
+    /**
+     * inputStream转换为outputStream
+     *
+     * @param is 输入流
+     * @return outputStream子类
+     */
+    public static ByteArrayOutputStream input2OutputStream(InputStream is)
+    {
+        if (is == null)
+        {
+            return null;
+        }
+
+        try
+        {
+            ByteArrayOutputStream os = new ByteArrayOutputStream();
+            byte[] bytes = new byte[1024];
+            int len;
+            while ((len = is.read(bytes, 0, 1024)) != -1)
+            {
+                os.write(bytes, 0, len);
+            }
+
+            return os;
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+            return null;
+        }
+        finally
+        {
+            CloseUtils.closeIO(is);
+        }
+    }
+
+
+    /**
+     * outputStream转换为inputStream
+     *
+     * @param os 输出流
+     * @return inputStream子类
+     */
+    public static ByteArrayInputStream output2InputStream(OutputStream os)
+    {
+        if (os == null)
+        {
+            return null;
+        }
+
+        return new ByteArrayInputStream(((ByteArrayOutputStream) os).toByteArray());
+    }
+
+
+    /**
+     * inputStream转换为byte数组
+     *
+     * @param is 输入流
+     * @return 字节数组
+     */
+    public static byte[] inputStream2Bytes(InputStream is)
+    {
+        if (is == null)
+        {
+            return null;
+        }
+
+        return input2OutputStream(is).toByteArray();
+    }
+
+
+    /**
+     * byte数组转换为inputStream
+     *
+     * @param bytes 字节数组
+     * @return 输入流
+     */
+    public static InputStream bytes2InputStream(byte[] bytes)
+    {
+        if (bytes == null || bytes.length <= 0)
+        {
+            return null;
+        }
+
+        return new ByteArrayInputStream(bytes);
+    }
+
+
+    /**
+     * outputStream转换为byte数组
+     *
+     * @param os 输出流
+     * @return 字节数组
+     */
+    public static byte[] outputStream2Bytes(OutputStream os)
+    {
+        if (os == null)
+        {
+            return null;
+        }
+
+        return ((ByteArrayOutputStream) os).toByteArray();
+    }
+
+
+    /**
+     * byte数组转换为outputStream
+     *
+     * @param bytes 字节数组
+     * @return outputStream子类
+     */
+    public static OutputStream bytes2OutputStream(byte[] bytes)
+    {
+        if (bytes == null || bytes.length <= 0)
+        {
+            return null;
+        }
+
+        ByteArrayOutputStream os = null;
+        try
+        {
+            os = new ByteArrayOutputStream();
+            os.write(bytes);
+            return os;
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+            return null;
+        }
+        finally
+        {
+            CloseUtils.closeIO(os);
+        }
+    }
+
+
+    /**
+     * inputStream按编码格式转换为string
+     *
+     * @param is          输入流
+     * @param charsetName 编码格式
+     * @return 字符串
+     */
+    public static String inputStream2String(InputStream is, String charsetName)
+    {
+        if (is == null || StringUtils.isSpace(charsetName))
+        {
+            return null;
+        }
+
+        try
+        {
+            return new String(inputStream2Bytes(is), charsetName);
+        }
+        catch (UnsupportedEncodingException e)
+        {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+
+    /**
+     * string按编码格式转换为inputStream
+     *
+     * @param string      字符串
+     * @param charsetName 编码格式
+     * @return 输入流
+     */
+    public static InputStream string2InputStream(String string, String charsetName)
+    {
+        if (string == null || StringUtils.isSpace(charsetName))
+        {
+            return null;
+        }
+
+        try
+        {
+            return new ByteArrayInputStream(string.getBytes(charsetName));
+        }
+        catch (UnsupportedEncodingException e)
+        {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+
+    /**
+     * outputStream按编码格式转换为string
+     *
+     * @param os          输出流
+     * @param charsetName 编码格式
+     * @return 字符串
+     */
+    public static String outputStream2String(OutputStream os, String charsetName)
+    {
+        if (os == null || StringUtils.isSpace(charsetName))
+        {
+            return null;
+        }
+
+        try
+        {
+            return new String(outputStream2Bytes(os), charsetName);
+        }
+        catch (UnsupportedEncodingException e)
+        {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+
+    /**
+     * string按编码格式转换为outputStream
+     *
+     * @param string      字符串
+     * @param charsetName 编码格式
+     * @return 输出流
+     */
+    public static OutputStream string2OutputStream(String string, String charsetName)
+    {
+        if (string == null || StringUtils.isSpace(charsetName))
+        {
+            return null;
+        }
+
+        try
+        {
+            return bytes2OutputStream(string.getBytes(charsetName));
+        }
+        catch (UnsupportedEncodingException e)
+        {
+            e.printStackTrace();
+            return null;
         }
     }
 

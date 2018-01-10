@@ -28,6 +28,7 @@ public class ConstUtils
      */
     public static final int GB = 1024 * 1024 * 1024;
 
+
     public enum MemoryUnit
     {
         BYTE,
@@ -54,6 +55,16 @@ public class ConstUtils
      * 天与毫秒的倍数
      */
     public static final int DAY = 24 * 60 * 60 * 1000;
+
+
+    public enum TimeUnit
+    {
+        MSEC,
+        SEC,
+        MIN,
+        HOUR,
+        DAY
+    }
 
 
     /*-------------------- 与正则相关 --------------------*/
