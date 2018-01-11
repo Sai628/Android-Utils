@@ -100,6 +100,15 @@ inputStream2String(InputStream is, String charsetName)|inputStream按编码格�
 string2InputStream(String string, String charsetName)|string按编码格式转换为inputStream
 outputStream2String(OutputStream os, String charsetName)|outputStream按编码格式转换为string
 string2OutputStream(String string, String charsetName)|string按编码格式转换为outputStream
+-|
+bitmap2Bytes(Bitmap bitmap, Bitmap.CompressFormat format)|bitmap转换为byte数组
+bytes2Bitmap(byte[] bytes)|byte数组转换为bitmap
+drawable2Bitmap(Drawable drawable)|drawable转换为bitmap
+bitmap2Drawable(Resources res, Bitmap bitmap)|bitmap转换为drawable
+drawable2Bytes(Drawable drawable, Bitmap.CompressFormat format)|drawable转换为byte数组
+bytes2Drawable(Resources res, byte[] bytes)|byte数组转换为drawable
+-|
+view2Bitmap(View view)|view转换为bitmap
 
 ### Empty Utils
 方法签名|描述
