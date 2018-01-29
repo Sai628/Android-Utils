@@ -307,14 +307,14 @@ public class ConvertUtils
      * <p>保留3位小数</p>
      *
      * @param byteSize 字节数
-     * @return 合适显示的内存大小字符串
+     * @return 合适显示的内存大小字符串. 当字节数小于0时, 结果返回空字符串
      */
     @SuppressLint("DefaultLocale")
     public static String byte2FitMemorySize(long byteSize)
     {
         if (byteSize < 0)
         {
-            return "shouldn't be less than zero!";
+            return "";
         }
         else if (byteSize < ConstUtils.KB)
         {
