@@ -28,6 +28,19 @@ outToCenterAnimation(long durationMills)|从中部退出动画
 -|
 shakeAnimation(int counts, long durationMills)|抖动动画
 
+### Clean Utils
+方法签名|描述
+---|---
+cleanInternalCache()|清除内部缓存
+cleanInternalFiles()|清除内部文件
+cleanInternalDBs()|清除内部数据库
+cleanInternalDB(String dbName)|根据名称清除数据库
+cleanInternalSP()|清除内部SP文件
+-|
+cleanExternalCache()|清除外部缓存
+cleanCustomCache(String dirPath)|清除自定义目录下的文件
+cleanCustomCache(File dir)|清除自定义目录下的文件
+
 ### Clipboard Utils
 方法签名|描述
 ---|---
