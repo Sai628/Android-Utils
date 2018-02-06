@@ -2,6 +2,7 @@ package com.sai628.androidutils;
 
 import android.app.Application;
 
+import com.sai628.androidutils.utils.CrashUtils;
 import com.sai628.androidutils.utils.Utils;
 
 
@@ -34,5 +35,6 @@ public class AppContext extends Application
     {
         instance = this;
         Utils.init(instance);
+        CrashUtils.getInstance().init();
     }
 }
