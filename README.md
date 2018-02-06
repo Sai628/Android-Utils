@@ -305,3 +305,10 @@ lowerFirstLetter(String s)|字符串首字母转小写
 reverse(String s)|反转字符串
 toDBC(String s)|转化为半角字符
 toSBC(String s)|转化为全角字符
+
+### Vibrator Utils
+方法签名|描述
+---|---
+vibrate(Context context, long milliseconds)|振动
+vibrate(Context context, long[] pattern, int repeat)|指定以pattern的模式振动
+cancel(Context context)|取消振动
