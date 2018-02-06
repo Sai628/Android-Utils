@@ -279,6 +279,25 @@ getPickImageIntent()|获取选择系统图库中图片的Intent
 getPickVideoIntent()|获取选择系统媒体库中视频的Intent
 getCropImageIntent(Uri inputUri, Uri outputUri, int aspectX, int aspectY, int outputX, int outputY)|获取裁剪图片的Intent
 
+### SDCard Utils
+方法签名|描述
+---|---
+isSDCardEnable()|判断SD卡是否可用
+getSDCardPath()|获取SD卡路径
+getDataPath()|获取SD卡的data路径
+getFreeSpace()|获取SD卡剩余空间
+getSDCardInfo()|获取SD卡信息
+
+### Shell Utils
+方法签名|描述
+---|---
+execCmd(String command, boolean isNeedRoot)|执行命令
+execCmd(List\<String> commands, boolean isNeedRoot)|执行命令
+execCmd(String[] commands, boolean isNeedRoot)|执行命令
+execCmd(String command, boolean isNeedRoot, boolean isNeedResult)|执行命令
+execCmd(List\<String> commands, boolean isNeedRoot, boolean isNeedResult)|执行命令
+execCmd(String[] commands, boolean isNeedRoot, boolean isNeedResult)|执行命令
+
 ### Size Utils
 方法签名|描述
 ---|---
@@ -291,15 +310,6 @@ forceGetViewSize(final View view, final onGetSizeListener listener)|在onCreate�
 measureView(View view)|测量视图尺寸
 getMeasureWidth(View view)|获取测量视图宽度
 getMeasureHeight(View view)|获取测量视图高度
-
-### SDCard Utils
-方法签名|描述
----|---
-isSDCardEnable()|判断SD卡是否可用
-getSDCardPath()|获取SD卡路径
-getDataPath()|获取SD卡的data路径
-getFreeSpace()|获取SD卡剩余空间
-getSDCardInfo()|获取SD卡信息
 
 ### String Utils
 方法签名|描述
