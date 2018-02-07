@@ -381,3 +381,20 @@ toSBC(String s)|转化为全角字符
 vibrate(Context context, long milliseconds)|振动
 vibrate(Context context, long[] pattern, int repeat)|指定以pattern的模式振动
 cancel(Context context)|取消振动
+
+### View Utils
+方法签名|描述
+---|---
+getItem(ViewPager viewPager, int index)|根据index索引值获取viewPager中的Fragment对象
+setMargins(View view, int left, int top, int right, int bottom)|设置视图控件的margin值
+setListViewHeightBasedOnChildren(ListView listview)|根据子View的内容设置ListView的高度
+-|
+showAnimationBaseOnChildView(ViewGroup viewGroup, Animation animation)|对ViewGroup中的子视图设置动画
+showView(View view, Animation animation)|设置视图出现动画
+hiddenView(View view, Animation animation)|设置视图隐藏动画
+dismissView(View view, Animation animation)|设置视图消失动画
+-|
+scrollToTopDelayed(final ScrollView scrollView)|延迟滚动视图到顶部
+scrollToTopDelayed(final ScrollView scrollView, long delayMillis)|根据延迟时间delayMillis滚动视图到顶部
+scrollToBottomDelayed(final ScrollView scrollView)|延迟滚动视图到底部
+scrollToBottomDelayed(final ScrollView scrollView, long delayMillis)|根据延迟时间delayMillis滚动视图到底部
