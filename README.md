@@ -329,6 +329,34 @@ measureView(View view)|测量视图尺寸
 getMeasureWidth(View view)|获取测量视图宽度
 getMeasureHeight(View view)|获取测量视图高度
 
+### SP Utils
+方法签名|描述
+---|---
+putString(String key, String value)|写入String类型值
+getString(String key)|读取String类型值
+getString(String key, String defValue)|读取String类型值
+-|
+putInt(String key, int value)|写入int类型值
+getInt(String key)|读取int类型值
+getInt(String key, int defValue)|读取int类型值
+-|
+putLong(String key, long value)|写入long类型值
+getLong(String key)|读取long类型值
+getLong(String key, long defValue)|读取long类型值
+-|
+putFloat(String key, float value)|写入float类型值
+getFloat(String key)|读取float类型值
+getFloat(String key, float defValue)|读取float类型值
+-|
+putBoolean(String key, boolean value)|写入boolean类型值
+getBoolean(String key)|读取boolean类型值
+getBoolean(String key, boolean defValue)|读取boolean类型值
+-|
+getAll()|获取SP中的所有键值对
+contains(String key)|判断SP中是否存在该key
+remove(String key)|移除SP中的键key
+clear()|清除SP中所有数据
+
 ### String Utils
 方法签名|描述
 ---|---
