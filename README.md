@@ -283,10 +283,28 @@ getCropImageIntent(Uri inputUri, Uri outputUri, int aspectX, int aspectY, int ou
 方法签名|描述
 ---|---
 isSDCardEnable()|判断SD卡是否可用
+-|
 getSDCardPath()|获取SD卡路径
 getDataPath()|获取SD卡的data路径
 getFreeSpace()|获取SD卡剩余空间
 getSDCardInfo()|获取SD卡信息
+
+### Service Utils
+方法签名|描述
+---|---
+startService(Context context, String className)|启动服务
+startService(Context context, Class<?> cls)|启动服务
+-|
+stopService(Context context, String className)|停止服务
+stopService(Context context, Class<?> cls)|停止服务
+-|
+bindService(Context context, String className, ServiceConnection conn, int flags)|绑定服务
+bindService(Context context, Class<?> cls, ServiceConnection conn, int flags)|绑定服务
+-|
+unbindService(Context context, ServiceConnection conn)|解绑服务
+-|
+getAllRunningService(Context context)|获取所有运行的服务
+isServiceRunning(Context context, String className)|判断服务是否运行
 
 ### Shell Utils
 方法签名|描述
