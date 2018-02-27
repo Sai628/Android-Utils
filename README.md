@@ -375,6 +375,11 @@ reverse(String s)|反转字符串
 toDBC(String s)|转化为半角字符
 toSBC(String s)|转化为全角字符
 
+### Thread Utils
+方法签名|描述
+---|---
+safeSleep(long time)|安全地进行休眠(方法内部会捕获异常)
+
 ### Vibrator Utils
 方法签名|描述
 ---|---
