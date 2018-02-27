@@ -279,6 +279,21 @@ getPickImageIntent()|获取选择系统图库中图片的Intent
 getPickVideoIntent()|获取选择系统媒体库中视频的Intent
 getCropImageIntent(Uri inputUri, Uri outputUri, int aspectX, int aspectY, int outputX, int outputY)|获取裁剪图片的Intent
 
+### Log Utils
+方法签名|描述
+---|---
+v(String tag, String msg)|输出Verbose日志消息
+d(String tag, String msg)|输出Debug日志消息
+i(String tag, String msg)|输出Info日志消息
+w(String tag, String msg)|输出Warn日志消息
+e(String tag, String msg)|输出Error日志消息
+-|
+v(Object object, String msg)|输出Verbose日志消息
+d(Object object, String msg)|输出Debug日志消息
+i(Object object, String msg)|输出Info日志消息
+w(Object object, String msg)|输出Warn日志消息
+e(Object object, String msg)|输出Error日志消息
+
 ### SDCard Utils
 方法签名|描述
 ---|---
