@@ -4,9 +4,12 @@ import android.content.ComponentName;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.Browser;
 import android.provider.MediaStore;
+import android.support.v4.content.FileProvider;
+import android.webkit.MimeTypeMap;
 
 import java.io.File;
 
@@ -23,6 +26,56 @@ public class IntentUtils
     {
         throw new UnsupportedOperationException("You can't instantiate this class.");
     }
+
+
+    /**
+     * 获取安装App的意图(支持6.0)
+     *
+     * @param filePath 文件路径
+     * @return intent
+     */
+    public static Intent getInstallAppIntent(String filePath)
+    {
+        return getInstallAppIntent(FileUtils.getFileByPath(filePath));
+    }
+
+
+    /**
+     * 获取安装App的意图(支持6.0)
+     *
+     * @param file 文件
+     * @return intent
+     */
+    public static Intent getInstallAppIntent(File file)
+    {
+        if (file == null)
+        {
+            return null;
+        }
+
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        String type;
+        if (Build.VERSION.SDK_INT < 23)
+        {
+            type = "application/vnd.android.package-archive";
+        }
+        else
+        {
+            String extension = FileUtils.getFileExtension(file);
+            type = MimeTypeMap.getSingleton().getMimeTypeFromExtension(extension);
+        }
+
+        if (Build.VERSION.SDK_INT >= 24)
+        {
+            intent.setFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            Uri contentUri = FileProvider.getUriForFile(Utils.getContext(), "com.your.package.fileProvider", file);
+            intent.setDataAndType(contentUri, type);
+        }
+
+        intent.setDataAndType(Uri.fromFile(file), type);
+        return intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+    }
+
 
     /**
      * 获取卸载App的Intent

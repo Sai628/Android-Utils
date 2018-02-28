@@ -253,7 +253,10 @@ getFileExtension(String filePath)|获取全路径中的文件拓展名
 ### Intent Utils
 方法签名|描述
 ---|---
+getInstallAppIntent(String filePath)|获取安装App的意图(支持6.0)
+getInstallAppIntent(File file)|获取安装App的意图(支持6.0)
 getUninstallAppIntent(String packageName)|获取卸载App的Intent
+-|
 getLaunchAppIntent(String packageName)|获取打开App的Intent
 getAppDetailsSettingsIntent(String packageName)|获取App具体设置的Intent
 -|
