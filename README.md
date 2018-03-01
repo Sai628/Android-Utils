@@ -147,6 +147,96 @@ base64UrlSafeEncode(String input)|Base64URL安全编码
 htmlEncode(CharSequence input)|Html编码
 htmlDecode(String input)|Html解码
 
+### Encrypt Utils
+方法签名|描述
+---|---
+encryptMD2ToString(String data)|MD2加密
+encryptMD2ToString(byte[] data)|MD2加密
+encryptMD2(byte[] data)|MD2加密
+-|
+encryptMD5ToString(String data)|MD5加密
+encryptMD5ToString(String data, String salt)|MD5加密
+encryptMD5ToString(byte[] data)|MD5加密
+encryptMD5ToString(byte[] data, byte[] salt)|MD5加密
+encryptMD5(byte[] data)|MD5加密
+-|
+encryptMD5FileToString(String filePath)|MD5加密文件(实质为做散列计算)
+encryptMD5FileToString(File file)|MD5加密文件(实质为做散列计算)
+encryptMD5File(String filePath)|MD5加密文件(实质为做散列计算)
+encryptMD5File(File file)|MD5加密文件(实质为做散列计算)
+-|
+encryptSHA1ToString(String data)|SHA1加密
+encryptSHA1ToString(byte[] data)|SHA1加密
+encryptSHA1(byte[] data)|SHA1加密
+-|
+encryptSHA224ToString(String data)|SHA224加密
+encryptSHA224ToString(byte[] data)|SHA224加密
+encryptSHA224(byte[] data)|SHA224加密
+-|
+encryptSHA256ToString(String data)|SHA256加密
+encryptSHA256ToString(byte[] data)|SHA256加密
+encryptSHA256(byte[] data)|SHA256加密
+-|
+encryptSHA384ToString(String data)|SHA384加密
+encryptSHA384ToString(byte[] data)|SHA384加密
+encryptSHA384(byte[] data)|SHA384加密
+-|
+encryptSHA512ToString(String data)|SHA512加密
+encryptSHA512ToString(byte[] data)|SHA512加密
+encryptSHA512(byte[] data)|SHA512加密
+-|
+encryptHmacMD5ToString(String data, String key)|Hmac-MD5加密
+encryptHmacMD5ToString(byte[] data, byte[] key)|Hmac-MD5加密
+encryptHmacMD5(byte[] data, byte[] key)|Hmac-MD5加密
+-|
+encryptHmacSHA1ToString(String data, String key)|Hmac-SHA1加密
+encryptHmacSHA1ToString(byte[] data, byte[] key)|Hmac-SHA1加密
+encryptHmacSHA1(byte[] data, byte[] key)|Hmac-SHA1加密
+-|
+encryptHmacSHA224ToString(String data, String key)|Hmac-SHA224加密
+encryptHmacSHA224ToString(byte[] data, byte[] key)|Hmac-SHA224加密
+encryptHmacSHA224(byte[] data, byte[] key)|Hmac-SHA224加密
+-|
+encryptHmacSHA256ToString(String data, String key)|Hmac-SHA256加密
+encryptHmacSHA256ToString(byte[] data, byte[] key)|Hmac-SHA256加密
+encryptHmacSHA256(byte[] data, byte[] key)|Hmac-SHA256加密
+-|
+encryptHmacSHA384ToString(String data, String key)|Hmac-SHA384加密
+encryptHmacSHA384ToString(byte[] data, byte[] key)|Hmac-SHA384加密
+encryptHmacSHA384(byte[] data, byte[] key)|Hmac-SHA384加密
+-|
+encryptHmacSHA512ToString(String data, String key)|Hmac-SHA512加密
+encryptHmacSHA512ToString(byte[] data, byte[] key)|Hmac-SHA512加密
+encryptHmacSHA512(byte[] data, byte[] key)|Hmac-SHA512加密
+-|
+encryptDESToBase64(byte[] data, byte[] key)|DES加密后转为Base64编码
+encryptDESToHexString(byte[] data, byte[] key)|DES加密后转为16进制
+encryptDES(byte[] data, byte[] key)|DES加密
+-|
+decryptBase64ViaDES(byte[] data, byte[] key)|DES解密Base64编码密文
+decryptHexStringViaDES(String data, byte[] key)|DES解密16进制密文
+decryptDES(byte[] data, byte[] key)|DES解密
+-|
+encrypt3DESToBase64(byte[] data, byte[] key)|3DES加密后转为Base64编码
+encrypt3DESToHexString(byte[] data, byte[] key)|3DES加密后转为16进制
+encrypt3DES(byte[] data, byte[] key)|3DES加密
+-|
+decryptBase64Via3DES(byte[] data, byte[] key)|3DES解密Base64编码密文
+decryptHexStringVia3DES(String data, byte[] key)|3DES解密16进制密文
+decrypt3DES(byte[] data, byte[] key)|3DES解密
+-|
+encryptAESToBase64(byte[] data, byte[] key)|AES加密后转为Base64编码
+encryptAESToHexString(byte[] data, byte[] key)|AES加密后转为16进制
+encryptAES(byte[] data, byte[] key)|AES加密
+-|
+decryptBase64ViaAES(byte[] data, byte[] key)|AES解密Base64编码密文
+decryptHexStringViaAES(String data, byte[] key)|AES解密16进制密文
+decryptAES(byte[] data, byte[] key)|AES解密
+-|
+hashTemplate(byte[] data, String algorithm)|hash加密模板
+hmacTemplate(byte[] data, byte[] key, String algorithm)|Hmac加密模版
+desTemplate(byte[] data, byte[] key, String algorithm, String transformation, boolean isEncrypt)|DES加密模板(适用于DES/3DES/AES)
+
 ### File Utils
 方法签名|描述
 ---|---
