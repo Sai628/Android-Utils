@@ -28,6 +28,55 @@ outToCenterAnimation(long durationMills)|从中部退出动画
 -|
 shakeAnimation(int counts, long durationMills)|抖动动画
 
+### App Utils
+方法签名|描述
+---|---
+installApp(Context context, String filePath)|安装app(支持6.0)
+installApp(Context context, File file)|安装app(支持6.0)
+installApp(Activity activity, String filePath, int requestCode)|安装App(支持6.0)
+installApp(Activity activity, File file, int requestCode)|安装App(支持6.0)
+installAppSilent(String filePath)|静默安装App
+-|
+uninstallApp(Context context, String packageName)|卸载App
+uninstallApp(Activity activity, String packageName, int requestCode)|卸载App
+uninstallAppSilent(Context context, String packageName, boolean isKeepData)|静默卸载App
+-|
+launchApp(String packageName)|打开App
+launchApp(Activity activity, String packageName, int requestCode)|打开App
+-|
+getAppDetailsSettings(Context context)|获取App具体设置
+getAppDetailsSettings(Context context, String packageName)|获取App具体设置
+getAppName(Context context)|获取App名称
+getAppName(Context context, String packageName)|获取App名称
+getAppIcon(Context context)|获取App图标
+getAppIcon(Context context, String packageName)|获取App图标
+getAppPath(Context context)|获取App路径
+getAppPath(Context context, String packageName)|获取App路径
+getAppVersionName(Context context)|获取App版本号
+getAppVersionName(Context context, String packageName)|获取App版本号
+getAppVersionCode(Context context)|获取App版本码
+getAppVersionCode(Context context, String packageName)|获取App版本码
+-|
+getAppSignature(Context context)|获取App签名
+getAppSignature(Context context, String packageName)|获取App签名
+getAppSignatureSHA1(Context context)|获取应用签名的SHA1值
+getAppSignatureSHA1(Context context, String packageName)|获取应用签名的SHA1值
+-|
+getAppInfo(Context context)|获取App信息
+getAppInfo(Context context, String packageName)|获取App信息
+getAppsInfo(Context context)|获取所有已安装App的信息
+-|
+isInstallApp(Context context, String packageName)|判断App是否安装
+isAppRoot()|判断App是否有root权限
+isSystemApp(Context context)|判断App是否为系统应用
+isSystemApp(Context context, String packageName)|判断App是否为系统应用
+isAppDebug(Context context)|判断App是否为Debug版本
+isAppDebug(Context context, String packageName)|判断App是否为Debug版本
+isAppForeground(Context context)|判断App是否处于前台
+-|
+cleanAppData(String... dirPaths)|清除App所有数据
+cleanAppData(File... dirs)|清除App所有数据
+
 ### Clean Utils
 方法签名|描述
 ---|---
