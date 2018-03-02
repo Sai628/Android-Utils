@@ -436,6 +436,13 @@ i(Object object, String msg)|输出Info日志消息
 w(Object object, String msg)|输出Warn日志消息
 e(Object object, String msg)|输出Error日志消息
 
+### Process Utils
+方法签名|描述
+---|---
+getAllBackgroundProcesses()|获取后台服务进程
+killAllBackgroundProcesses()|杀死所有的后台服务进程
+killBackgroundProcesses(String packageName)|杀死后台服务进程
+
 ### SDCard Utils
 方法签名|描述
 ---|---
