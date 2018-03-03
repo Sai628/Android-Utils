@@ -389,6 +389,14 @@ getFileNameWithoutExtension(String filePath)|获取全路径中的不带拓展�
 getFileExtension(File file)|获取全路径中的文件拓展名
 getFileExtension(String filePath)|获取全路径中的文件拓展名
 
+### Ime Utils
+方法签名|描述
+---|---
+hideIme(Activity activity)|动态隐藏软键盘
+showIme(Context context, EditText editText)|动态显示软键盘
+toggleSoftInput(Context context)|切换软键盘显示与否状态
+isImeShowing(Context context)|检测软键盘是否已显示
+
 ### Intent Utils
 方法签名|描述
 ---|---
