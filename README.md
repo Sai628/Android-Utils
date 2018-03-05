@@ -172,6 +172,27 @@ bytes2Drawable(Resources res, byte[] bytes)|byte数组转换为drawable
 -|
 view2Bitmap(View view)|view转换为bitmap
 
+### Device Utils
+方法签名|描述
+---|---
+isRooted()|判断设备是否已root
+-|
+getSDKVersion()|获取设备系统版本号
+getAndroidID()|获取设备的AndroidID
+getManufacturer()|获取设备厂商信息
+getModel()|获取设备型号
+-|
+getMacAddress()|获取设备的MAC地址
+getMacAddressByWifiInfo()|通过Wifi信息获取设备的MAC地址
+getMacAddressByNetworkInterface()|通过网卡信息获取设备的Mac地址
+getMacAddressByFile()|通过系统文件信息获取设备的Mac地址
+-|
+shutdown()|关机
+reboot()|重启
+reboot(String reason)|重启到某引导模式
+reboot2Recovery()|重启到Recovery模式
+reboot2Bootloader()|重启到bootloader模式
+
 ### Empty Utils
 方法签名|描述
 ---|---
