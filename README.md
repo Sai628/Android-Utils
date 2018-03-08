@@ -410,6 +410,12 @@ getFileNameWithoutExtension(String filePath)|获取全路径中的不带拓展�
 getFileExtension(File file)|获取全路径中的文件拓展名
 getFileExtension(String filePath)|获取全路径中的文件拓展名
 
+### Handler Utils
+类/接口|描述
+---|---
+OnReceiveMessageListener|接收消息回调接口
+HandlerHolder|Handler封闭类(避免GC问题)
+
 ### Ime Utils
 方法签名|描述
 ---|---
