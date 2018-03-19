@@ -471,6 +471,28 @@ i(Object object, String msg)|输出Info日志消息
 w(Object object, String msg)|输出Warn日志消息
 e(Object object, String msg)|输出Error日志消息
 
+### Network Utils
+方法签名|描述
+---|---
+openWirelessSettings()|打开网络设置界面
+-|
+isConnected()|判断网络是否连接
+isAvailableByPing()|判断网络是否可用(通过Ping的检测方式)
+-|
+isDataEnabled()|判断移动数据是否打开
+setDataEnabled(boolean enabled)|打开/关闭移动数据
+is4G()|判断网络是否是4G
+-|
+isWifiEnabled()|判断wifi是否打开
+setWifiEnabled(boolean enabled)|打开/关闭wifi
+isWifiConnected()|判断wifi是否连接状态
+isWifiAvailable()|判断wifi数据是否可用
+-|
+getNetworkOperatorName()|获取网络运营商名称
+getNetworkType()|获取当前网络类型
+getIPAddress(boolean useIPv4)|获取IP地址
+getDomainAddress(final String domain)|获取域名的IP地址
+
 ### Process Utils
 方法签名|描述
 ---|---
